@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'checkout',
+    'stripe',
 ]
 
 MIDDLEWARE = [
@@ -179,3 +181,13 @@ ACCOUNT_USERNAME_BLACKLIST = []
 ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_PASSWORD_INPUT_RENDER_VALUE = False
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
+
+# stripe things
+
+# test keys
+STRIPE_PUBLISHABLE_KEY = 'pk_test_SrD55Ln3XtKOaZO0DTbmNk4400B9jkAN5Y'
+STRIPE_SECRET_KEY = 'sk_test_Cr0erYjEqxjRvmlwVTIjdsA100GN89OMow'
+
+# live keys, when you go live, uncomment these, and comment out the above test keys
+#STRIPE_PUBLISHABLE_KEY = ''
+#STRIPE_SECRET_KEY = ''

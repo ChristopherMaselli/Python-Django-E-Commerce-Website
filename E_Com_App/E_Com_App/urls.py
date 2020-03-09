@@ -19,15 +19,19 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.urls import path
 
-from profiles import views as profile_views
+from profiles import views as profiles_views
 from contact import views as contact_views
+from checkout import views as checkout_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', profile_views.home, name='home'),
-    path('about/', profile_views.about, name='about'),
+    path('', profiles_views.home, name='home'),
+    path('profiles/', profiles_views.userProfile, name='profiles'),
+    path('about/', profiles_views.about, name='about'),
     path('contact/', contact_views.contact, name='contact'),
     path('accounts/', include('allauth.urls')),
+    path('checkout/', checkout_views.checkout, name='checkout')
+
 ]
 
 if settings.DEBUG:

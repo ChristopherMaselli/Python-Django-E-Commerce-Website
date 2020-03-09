@@ -34,10 +34,10 @@
             >Dropdown <span class="caret"></span
           ></a>
           <ul class="dropdown-menu">
-            {% if not request.user.is.authenticated %}
-            <li><a href="{% url 'account_signup' %}">Login</a></li>
-            <li><a href="{% url 'account_login' %}">Signup</a></li>
-            {% else%}
+            {% if not request.user.is_authenticated %}
+            <li><a href="{% url 'account_login' %}">Login</a></li>
+            <li><a href="{% url 'account_signup' %}">Signup</a></li>
+            {% else %}
             <li><a href="{% url 'account_logout' %}">Logout</a></li>
             {% endif %}
             <li role="separator" class="divider"></li>
